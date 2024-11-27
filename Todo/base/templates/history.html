@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+
+{% block content%}
+
+    <div class="TaskList">
+        <h2>Task History</h2>
+        {% for i in del_tsk %}
+
+        <div class="task">
+            <p class="title">
+                {{i.title}} 
+            </p>
+            <p class="desc">
+                {{i.desc}} 
+            </p>
+        </div>
+        
+
+        {% endfor  %}
+
+    </div>
+
+    
+{% endblock content%}

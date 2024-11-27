@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+
+{% block content%}
+
+    <div class="addtask">
+
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            <fieldset>
+                <legend>Edit Task</legend>
+                <div>
+                    <label for="" >Title</label>
+                    <input type="text" name="title" value="{{data.title}}" required autocomplete="off">
+                </div>
+    
+                <div>
+                    <label for="" >Description</label>
+                    <input type="text" name="desc" value="{{data.desc}}" required autocomplete="off">
+    
+                </div>
+    
+                
+                <input class="submit" type="submit"></button>
+
+            </fieldset>
+            
+
+        </form>
+
+    </div>
+    
+{% endblock content%}
