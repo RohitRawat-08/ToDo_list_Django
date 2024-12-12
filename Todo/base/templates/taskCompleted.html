@@ -3,7 +3,12 @@
 {% block content%}
 
 <div class="TaskList">
-    <h2>Task Completed</h2>
+    <div class="head_del">
+        <h2 style="margin-left: 15px;">Task Completed</h2>
+        <a style="margin-right: 5px;" class="Completed" href="{% url 'Restore_all_CompletedTask' %}">Restore All</a>
+        <a class="Delete" href="{% url 'conform_DeleteAll_Task_Complete' %}">Delete All</a>
+    </div>
+
     {% for i in com_tsk %}
 
     <div class="task">
@@ -13,6 +18,11 @@
         <p class="desc">
             {{i.desc}} 
         </p>
+        <div class="buttons">
+            <a class="Completed" href="{% url 'restore_single_completed_task' i.id %}">Restore</a>
+            <a class="Delete" href="{% url 'conform_Delete_Task_Complete' i.id %}">Delete</a>
+        </div>
+        
     </div>
     
 

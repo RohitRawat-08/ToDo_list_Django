@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+
+{% block content%}
+
+    <div class="addtask">
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            <fieldset>
+                <legend>Register</legend>
+
+                <input class="input" type="text" name="first_name" required autocomplete="off" placeholder="First Name">
+                
+                <input class="input" type="text" name="last_name" required autocomplete="off" placeholder="Last Name">
+
+                <input class="input" type="text" name="username" required autocomplete="off" placeholder="Username">
+
+                <input class="input" type="email" name="email" required autocomplete="off" placeholder="Email">
+
+                <input class="input" type="password" name="password" required autocomplete="off" placeholder="Password">
+    
+                <button class="" type="submit">Register</button>
+
+
+                <a href="{% url 'LogIn' %}">Existing User? Log in</a>
+
+            </fieldset>
+        </form>
+    </div>
+
+{% endblock content%}

@@ -1,10 +1,19 @@
 <nav>
     <div class="logo"><a href="">TO DO</a></div>
     <ul>
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'addtask' %}">Add</a></li>
-        <li><a href="{% url 'taskhistory' %}">History</a></li>
-        <li><a href="{% url 'taskcomplete' %}">Complete</a> </li>
+        {% if request.user.is_authenticated %}
+
+            <li><a href="{% url 'home' %}">Task</a></li>
+            <li><a href="{% url 'addtask' %}">Add</a></li>
+            <li><a href="{% url 'taskhistory' %}">History</a></li>
+            <li><a href="{% url 'taskcomplete' %}">Complete</a> </li>
+            <li><a href="{% url 'LogOut' %}">Logout</a></li>
+
+        {% else %}
+            <li><a href="{% url 'LogIn' %}">Login</a></li>
+
+        {% endif %}
+
         <li><a href="{% url 'about' %}">About</a></li>
         
     </ul>

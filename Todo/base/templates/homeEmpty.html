@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block content%}
+
+
+    <div class="TaskList">
+
+        <h2>
+            {{data}}
+        </h2>
+
+        <a class="Edit" href="{% url 'addtask' %}" style="text-decoration: none;font-weight: 600; font-size: 20px; color: black; ">Add Task</a>
+    </div>
+    
+{% endblock content%}

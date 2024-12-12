@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block content%}
+
+
+    <div class="TaskList">
+
+        <form action="" method="post">
+          {% csrf_token %}
+
+            <h2>Are You Sure To Delete All Task ?</h2>
+
+            <div class="conform">
+                <input class="Delete" type="submit" value="OK">
+                <a class="Completed" href="{% url 'taskhistory' %}">NO</a>
+
+            </div>
+
+        </form>
+    </div>
+    
+{% endblock content%}

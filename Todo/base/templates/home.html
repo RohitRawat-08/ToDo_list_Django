@@ -4,7 +4,7 @@
 
 
     <div class="TaskList">
-
+        <h2>Task List</h2>
         {% for i in data %}
 
         <div class="task">
@@ -15,9 +15,13 @@
                 {{i.desc}} 
             </p>
             <div class="buttons">
-                <button><a href="{% url 'edittask' i.id %}">Edit</a></button>
-                <button><a href="{% url 'delete' i.id %}">Delete</a></button>
-                <button><a href="{% url 'complete' i.id %}">Task Completed</a></button>
+
+                <a class="Edit" href="{% url 'edittask' i.id %}">Edit</a>
+
+                <a class="Completed" href="{% url 'complete' i.id %}">Task Completed</a>
+                
+                <a class="Delete" href="{% url 'conform' i.id %}">Delete</a>
+
             </div>
         </div>
         
